@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 
+
 const LeadSection = () => {
   return (
     <section id="lead" className="section lead-section">
@@ -26,10 +27,11 @@ const LeadSection = () => {
           transition={{ delay: 0.8 }}
         >
           <a
-            href="/doc/Geoffrey_Omondi_Resume.pdf"
+            href="/Resume.pdf"
             className="btn-rounded-white"
             target="_blank"
             rel="noopener noreferrer"
+            
           >
             Download Resume
           </a>
