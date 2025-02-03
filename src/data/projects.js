@@ -23,6 +23,24 @@ const projects = [
     link: "https://thirdweb-lootbox-quiz-app.fly.dev/"
   },
   {
+    title: "Film Festival Website",
+    description: "Event management platform with registration system and social media integration",
+    image: movieImage,
+    link: "https://elducati.github.io/movie-site/"
+  },
+  {
+    title: "Quotation Generator",
+    description: "Random quote generator with MDBootstrap interface",
+    image: quoteImage,
+    link: "https://elducati.github.io/quote-generator/"
+  },
+  {
+    title: "Turn-based Board Game",
+    description: "Multiplayer strategy game with JavaScript core mechanics",
+    image: turnGameImage,
+    link: "https://elducati.github.io/Turn-based-Javascript-board-game/"
+  },
+  {
     title: "On-chain Mechanical Keyboards",
     description: "Web app for creating on-chain mechanical keyboards with ETH tipping. Built with Solidity, React, Next.js",
     image: image2,
@@ -76,24 +94,7 @@ const projects = [
     image: image10,
     link: "https://nft-starter-project.elducati.repl.co/"
   },
-  {
-    title: "Film Festival Website",
-    description: "Event management platform with registration system and social media integration",
-    image: movieImage,
-    link: "https://elducati.github.io/movie-site/"
-  },
-  {
-    title: "Quotation Generator",
-    description: "Random quote generator with MDBootstrap interface",
-    image: quoteImage,
-    link: "https://elducati.github.io/quote-generator/"
-  },
-  {
-    title: "Turn-based Board Game",
-    description: "Multiplayer strategy game with JavaScript core mechanics",
-    image: turnGameImage,
-    link: "https://elducati.github.io/Turn-based-Javascript-board-game/"
-  },
+ 
   {
     title: "Restaurant Review Platform",
     description: "Crowdsourced restaurant rating system with user reviews",
