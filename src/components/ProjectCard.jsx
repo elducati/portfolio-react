@@ -9,7 +9,7 @@ const ProjectCard = ({ title, description, image, link }) => (
     animate={{ opacity: 1 }}
   >
     <div className="project-image">
-      <img src={image} alt={title} />
+      {/* <img src={image} alt={title} /> */}
     </div>
     <div className="project-content">
       <h3>{title}</h3>
