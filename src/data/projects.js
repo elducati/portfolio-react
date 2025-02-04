@@ -29,6 +29,12 @@ const projects = [
     link: "https://elducati.github.io/movie-site/"
   },
   {
+    title: "Film Festival Website - React Version",
+    description: "Event management platform with registration system and social media integration",
+    image: movieImage,
+    link: "https://watch-it-outside-react.vercel.app/"
+  },
+  {
     title: "Quotation Generator",
     description: "Random quote generator with MDBootstrap interface",
     image: quoteImage,
