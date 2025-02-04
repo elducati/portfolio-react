@@ -1,5 +1,7 @@
 // src/data/about.js
+import image from '../assets/coogif.gif'
 const aboutData = {
+  image:image,
     points: [
       "E-Commerce Solutions Architect | Crafting High-Converting Stores with WordPress, Shopify & Magento",
       "Web Developer extra-ordinaire with 8+ years of experience in full-stack development",

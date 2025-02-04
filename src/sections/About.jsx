@@ -12,7 +12,17 @@ const About = () => {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.5 }}
-        >
+        >          
+            <div className="about-image">
+            <motion.img
+              src={aboutData.image}
+              alt="Profile"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            />
+            </div>
           <div className="about-text">
             {aboutData.points.map((point, index) => (
               <motion.p
