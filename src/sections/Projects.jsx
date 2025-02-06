@@ -11,6 +11,7 @@ const Projects = ({ visibleProjects, loadMore }) => {
           <ProjectCard key={index} {...project} />
         ))}
       </div>
+      <div className='load-more-card'>
       {visibleProjects < projectsData.length && (
         <button 
           className="load-more"
@@ -19,6 +20,7 @@ const Projects = ({ visibleProjects, loadMore }) => {
           Show More Projects
         </button>
       )}
+      </div>
     </section>
   );
 };

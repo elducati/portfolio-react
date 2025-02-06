@@ -466,13 +466,22 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin-top: 20px;
+  
 }
 
 .load-more:hover {
   background-color: #005582;
 }
-
+.load-more-card {
+  background-color: #1f1e2e;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #0000001a;
+    margin: 20px;
+    overflow: hidden;
+    transition: transform .3s;
+    display: flex;
+    flex-direction: column;
+}
 /* Experience section styles */
 .experience-section {
   padding: 60px 20px;
@@ -609,7 +618,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
-  width: 100%;
+  
 }
 
 .contact-form input.error,
