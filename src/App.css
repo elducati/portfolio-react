@@ -1,7 +1,7 @@
 /* Common styles */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #0b0b1c;
+  background-image: linear-gradient(to top, #1f1e2e, #0b0b1c);
   color: #ffffff;
 }
 
