@@ -20,7 +20,7 @@ function App() {
   };
 
   return (
-    <div className={`app ${menuOpen ? 'menu-open' : ''}`}>
+    <div className={`app ${menuOpen ? 'menu-open' : ''} bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 min-h-screen`}>
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <LeadSection />
       <About />

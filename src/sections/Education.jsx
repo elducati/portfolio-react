@@ -4,26 +4,26 @@ import educationData from '../data/education';
 
 const Education = () => {
   return (
-    <section id="education" className="section education-section">
-      <h2 className="section-title">Education</h2>
-      <div className="education-grid">
+    <section id="education" className="py-16 bg-gray-800 backdrop-blur-md border border-white/20 p-8 md:p-16">
+      <h2 className="text-4xl text-center mb-10 text-gray-200 bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-400">Education</h2>
+      <div className="grid gap-8">
         {educationData.map((edu, index) => (
           <motion.div
             key={index}
-            className="education-card"
+            className="p-6 bg-gray-900 bg-opacity-50 rounded-lg shadow-md border border-gradient-to-r from-blue-500 to-purple-500 hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            <h3>{edu.institution}</h3>
-            <div className="education-details">
-              <span className="degree">{edu.degree}</span>
-              <span className="date">{edu.date}</span>
+            <h3 className="text-2xl text-gray-200 mb-2">{edu.institution}</h3>
+            <div className="flex justify-between text-gray-500 mb-4">
+              <span className="text-lg">{edu.degree}</span>
+              <span className="text-sm">{edu.date}</span>
             </div>
             {edu.projects && (
-              <div className="projects-list">
-                <h4>Key Projects:</h4>
-                <ul>
+              <div className="mt-4">
+                <h4 className="text-xl text-gray-200 mb-2">Key Projects:</h4>
+                <ul className="list-disc list-inside text-gray-500">
                   {edu.projects.map((project, i) => (
                     <li key={i}>{project}</li>
                   ))}

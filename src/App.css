@@ -1,8 +1,13 @@
+@import 'tailwindcss';
 /* Common styles */
 body {
   font-family: 'Poppins', sans-serif;
-  background-image: linear-gradient(135deg, #0b0b1c 0%, #1f1e2e 25%, #3a3a52 50%, #1f1e2e 75%, #0b0b1c 100%);
-  color: #ffffff;
+  /* background-image: linear-gradient(135deg, #0b0b1c 0%, #1f1e2e 25%, #3a3a52 50%, #1f1e2e 75%, #0b0b1c 100%); */
+  color: #E5E7EB; /* High contrast primary text color */
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 .section {
@@ -15,7 +20,10 @@ body {
   font-size: 32px;
   text-align: center;
   margin-bottom: 40px;
-  color: #ffffff;
+  color: #E5E7EB; /* High contrast primary text color */
+  background-clip: text;
+  text-fill-color: transparent;
+  background-image: linear-gradient(to right, #E5E7EB, #cccccc);
 }
 
 .container {
@@ -26,36 +34,45 @@ body {
 }
 
 .card {
-  background-color: #1f1e2e;
-  color: #ffffff;
+  background-color: rgba(31, 30, 46, 0.8);
+  color: #E5E7EB; /* High contrast primary text color */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card h3 {
   margin: 0 0 10px;
   font-size: 20px;
-  color: #333;
+  color: #E5E7EB; /* High contrast primary text color */
 }
 
 .card p {
   font-size: 16px;
-  color: #666;
+  color: #71717A; /* Medium contrast secondary text color */
   margin-bottom: 15px;
 }
 
 .card a {
-  color: #0073b1;
+  color: #60A5FA; /* Accent color */
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 .card a:hover {
-  color: #005582;
+  color: #3B82F6; /* Darker accent color on hover */
 }
 
 /* Lead section styles */
@@ -88,11 +105,12 @@ body {
   padding: 10px 20px;
   border-radius: 50px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .btn-rounded-white:hover {
   background-color: #f4f4f4;
+  transform: scale(1.05);
 }
 
 .lead-down {
@@ -100,16 +118,6 @@ body {
   font-size: 24px;
   margin-top: 40px;
   display: inline-block;
-  transition: color 0.3s;
-}
-
-.lead-down:hover {
-  color: #0073b1;
-}
-
-/* Header styles */
-.app-header {
-  background-color: #1f1e2e;
   color: white;
   padding: 10px 20px;
   display: flex;
@@ -130,7 +138,7 @@ body {
 }
 
 .main-nav.active {
-  display: block;
+  display: flex;
 }
 
 .main-nav ul {
@@ -190,7 +198,7 @@ body {
 .timeline-marker {
   width: 15px;
   height: 15px;
-  background-color: #ffffff;
+  background-color: #E5E7EB; /* High contrast primary text color */
   border-radius: 50%;
   position: absolute;
   left: -8px;
@@ -198,29 +206,30 @@ body {
 }
 
 .timeline-content {
-  background-color: #1f1e2e;
+  background-color: rgba(31, 30, 46, 0.8);
   padding: 15px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-left: 30px;
   width: 100%;
+  backdrop-filter: blur(10px);
 }
 
 .timeline-content h3 {
   margin: 0;
   font-size: 20px;
-  color: #333;
+  color: #E5E7EB; /* High contrast primary text color */
 }
 
 .timeline-content h4 {
   margin: 5px 0;
   font-size: 18px;
-  color: #666;
+  color: #71717A; /* Medium contrast secondary text color */
 }
 
 .timeline-content .date {
   font-size: 14px;
-  color: #999;
+  color: #999999;
   margin-bottom: 10px;
   display: block;
 }
@@ -234,12 +243,12 @@ body {
 .timeline-content ul li {
   margin-bottom: 5px;
   font-size: 16px;
-  color: #555;
+  color: #71717A; /* Medium contrast secondary text color */
 }
 
 /* Footer styles */
 .app-footer {
-  background-image: linear-gradient(to bottom, #1f1e2e, #0b0b1c);
+  
   color: white;
   padding: 20px 0;
   text-align: center;
@@ -269,7 +278,7 @@ body {
 }
 
 .social-links a:hover {
-  color: #0073b1; /* LinkedIn blue */
+  color: #60A5FA; /* Accent color */
 }
 
 .back-to-top {
@@ -281,23 +290,26 @@ body {
 }
 
 .back-to-top:hover {
-  color: #0073b1; /* LinkedIn blue */
+  color: #60A5FA; /* Accent color */
 }
 
 /* ProjectCard styles */
 .project-card {
-  background-color: #1f1e2e;
+  background-color: rgba(31, 30, 46, 0.8);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s;
   margin: 20px;
+  backdrop-filter: blur(10px);
 }
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
+
 .project-image img {
   width: 100%;
   height: auto;
@@ -311,31 +323,32 @@ body {
 .project-content h3 {
   margin: 0 0 10px;
   font-size: 20px;
-  color: #333;
+  color: #E5E7EB; /* High contrast primary text color */
 }
 
 .project-content p {
   margin: 0 0 15px;
   font-size: 16px;
-  color: #666;
+  color: #71717A; /* Medium contrast secondary text color */
 }
 
 .project-content a {
-  color: #0073b1;
+  color: #60A5FA; /* Accent color */
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 .project-content a:hover {
-  color: #005582;
+  color: #3B82F6; /* Darker accent color on hover */
 }
 
 /* About section styles */
 .about-section {
   padding: 60px 20px;
-  background-color: #1f1e2e;
-  
+  background-color: rgba(31, 30, 46, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .about-container {
@@ -351,7 +364,7 @@ body {
 
 .about-text p {
   font-size: 18px;
-  color: #666;
+  color: #71717A; /* Medium contrast secondary text color */
   margin-bottom: 15px;
 }
 
@@ -371,19 +384,19 @@ body {
 
 .fun-fact i {
   font-size: 24px;
-  color: #0073b1;
+  color: #60A5FA; /* Accent color */
   margin-bottom: 10px;
 }
 
 .fun-fact h3 {
   font-size: 20px;
-  color: #333;
+  color: #E5E7EB; /* High contrast primary text color */
   margin-bottom: 10px;
 }
 
 .fun-fact p {
   font-size: 16px;
-  color: #666;
+  color: #71717A; /* Medium contrast secondary text color */
 }
 
 /* About Section Image Styling */
@@ -437,12 +450,12 @@ body {
 }
 
 .skill-item {
-  background-color: #1f1e2e;
+  background-color: rgba(31, 30, 46, 0.8);
   padding: 10px 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-size: 16px;
-  color: #333;
+  color: #E5E7EB; /* High contrast primary text color */
 }
 
 /* Projects section styles */
@@ -458,29 +471,31 @@ body {
 }
 
 .load-more {
-  background-color: #0073b1;
+  background-color: #60A5FA; /* Accent color */
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  
 }
 
 .load-more:hover {
-  background-color: #005582;
+  background-color: #3B82F6; /* Darker accent color on hover */
 }
+
 .load-more-card {
-  background-color: #1f1e2e;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px #0000001a;
-    margin: 20px;
-    overflow: hidden;
-    transition: transform .3s;
-    display: flex;
-    flex-direction: column;
+  background-color: rgba(31, 30, 46, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
 }
+
 /* Experience section styles */
 .experience-section {
   padding: 60px 20px;
@@ -498,10 +513,11 @@ body {
 }
 
 .tech-era {
-  background-color: #0b0b1c;
+  background-color: rgba(31, 30, 46, 0.8);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 .era-header {
@@ -514,7 +530,7 @@ body {
 .year {
   font-size: 18px;
   font-weight: bold;
-  color: #333;
+  color: #E5E7EB; /* High contrast primary text color */
 }
 
 .tech-stack {
@@ -523,7 +539,7 @@ body {
 }
 
 .tech-item {
-  background-color: #0073b1;
+  background-color: #60A5FA; /* Accent color */
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
@@ -532,7 +548,7 @@ body {
 
 .era-description {
   font-size: 16px;
-  color: #666;
+  color: #71717A; /* Medium contrast secondary text color */
 }
 
 /* Education section styles */
@@ -549,18 +565,19 @@ body {
 }
 
 .education-card {
-  background-color: #1f1e2e;
+  background-color: rgba(31, 30, 46, 0.8);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
+  backdrop-filter: blur(10px);
 }
 
 .education-card h3 {
   margin: 0 0 10px;
   font-size: 20px;
-  color: #333;
+  color: #E5E7EB; /* High contrast primary text color */
 }
 
 .education-details {
@@ -571,18 +588,18 @@ body {
 
 .degree {
   font-size: 16px;
-  color: #666;
+  color: #71717A; /* Medium contrast secondary text color */
 }
 
 .date {
   font-size: 14px;
-  color: #999;
+  color: #999999;
 }
 
 .projects-list h4 {
   margin: 10px 0;
   font-size: 16px;
-  color: #333;
+  color: #E5E7EB; /* High contrast primary text color */
 }
 
 .projects-list ul {
@@ -593,7 +610,7 @@ body {
 
 .projects-list ul li {
   font-size: 14px;
-  color: #666;
+  color: #71717A; /* Medium contrast secondary text color */
   margin-bottom: 5px;
 }
 
@@ -617,7 +634,8 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
-  
+  background-color: rgba(31, 30, 46, 0.8);
+  color: #E5E7EB; /* High contrast primary text color */
 }
 
 .contact-form input.error,
@@ -626,7 +644,7 @@ body {
 }
 
 .contact-form button {
-  background-color: #0073b1;
+  background-color: #60A5FA; /* Accent color */
   color: white;
   padding: 10px 20px;
   border: none;
@@ -639,5 +657,5 @@ body {
 }
 
 .contact-form button:hover {
-  background-color: #1f1e2e;
+  background-color: #3B82F6; /* Darker accent color on hover */
 }

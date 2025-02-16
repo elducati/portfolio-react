@@ -3,18 +3,20 @@ import { motion } from 'framer-motion';
 
 const ProjectCard = ({ title, description, image, link }) => (
   <motion.div 
-    className="project-card"
+    className="p-6 bg-gray-900 bg-opacity-50 rounded-lg shadow-md border border-gradient-to-r from-blue-500 to-purple-500 hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300"
     whileHover={{ scale: 1.02 }}
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
   >
-    <div className="project-image">
-      {/* <img src={image} alt={title} /> */}
-    </div>
     <div className="project-content">
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <a href={link} target="_blank" rel="noopener noreferrer">
+      <h3 className="text-2xl text-gray-200 mb-2">{title}</h3>
+      <p className="text-gray-500 mb-4">{description}</p>
+      <a 
+        href={link} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="text-blue-500 hover:underline"
+      >
         View Project
       </a>
     </div>
