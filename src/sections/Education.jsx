@@ -6,13 +6,14 @@ const Education = () => {
   return (
     <section id="education" className="py-16 bg-gray-800 backdrop-blur-md border border-white/20 p-8 md:p-16">
       <h2 className="text-4xl text-center mb-10 text-gray-200 bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-400">Education</h2>
-      <div className="grid gap-8">
+      <div className="flex flex-wrap justify-center gap-8">
         {educationData.map((edu, index) => (
           <motion.div
             key={index}
             className="p-6 bg-gray-900 bg-opacity-50 rounded-lg shadow-md border border-gradient-to-r from-blue-500 to-purple-500 hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.05 }}
             viewport={{ once: true, amount: 0.5 }}
           >
             <h3 className="text-2xl text-gray-200 mb-2">{edu.institution}</h3>
