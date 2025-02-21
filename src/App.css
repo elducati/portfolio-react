@@ -20,7 +20,7 @@ body {
   margin-bottom: 40px;
   color: #E5E7EB; /* High contrast primary text color */
   background-clip: text;
-  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
   background-image: linear-gradient(to right, #E5E7EB, #cccccc);
 }
 

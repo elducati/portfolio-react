@@ -10,7 +10,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 bg-gray-800 backdrop-blur-md border border-white/20">
+    <section id="contact" className="py-16 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 backdrop-blur-md border border-white/20">
       <h2 className="text-4xl text-center mb-10 text-gray-200 bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-400">Get in Touch</h2>
       <motion.form
         onSubmit={handleSubmit(onSubmit)}
