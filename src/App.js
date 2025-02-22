@@ -36,7 +36,7 @@ function App() {
         loadMore={loadMoreProjects}
       />
       <GithubRepositories
-        visibleRepos={visibleProjects}
+        visibleRepos={visibleRepos}
         loadMoreRepos={loadMoreRepos} />
       <Skills />
       <Contact />
