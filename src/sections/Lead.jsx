@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { motion } from 'framer-motion';
+import coogif from '../assets/coogif.gif'; // Import the GIF
 
 const LeadSection = () => {
   const svgRef = useRef(null);
@@ -52,7 +54,7 @@ const LeadSection = () => {
   };
 
   return (
-    <section id="lead" className="relative h-screen flex items-center justify-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center p-8">
+    <section id="lead" className="relative  flex items-center justify-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center p-8">
       <div className="flex flex-col items-center w-full">
         <div className="hover:opacity-90 transition-opacity duration-300 w-full">
           <svg
@@ -67,12 +69,6 @@ const LeadSection = () => {
                 <stop offset="0%" stopColor={currentColor} stopOpacity="0.6" />
                 <stop offset="100%" stopColor={currentColor} stopOpacity="0" />
               </radialGradient>
-
-              {/* <linearGradient id="textGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="white" stopOpacity="1" />
-                <stop offset="100%" stopColor="white" stopOpacity="0.1" />
-              </linearGradient> */}
-
               <mask id="text-mask">
                 <text
                   x="50%"
@@ -118,26 +114,40 @@ const LeadSection = () => {
           </svg>
         </div>
 
-        <div 
-          className="text-4xl mb-8 opacity-0 animate-[fadeIn_1s_ease-in_forwards]"
-          style={{ animationDelay: '0.4s' }}
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.2,
+            type: "spring",
+            stiffness: 100,
+          }}
+          className="relative w-full max-w-[500px] mx-auto mt-8 mb-8" // Added mb-8 for margin-bottom
         >
-          Software Developer
-        </div>
-
-        <div 
-          className="opacity-0 scale-0 animate-[scaleIn_0.5s_ease-out_forwards]"
-          style={{ animationDelay: '0.8s' }}
-        >
-          <a
-            href="/Resume.pdf"
-            className="inline-block bg-white text-gray-800 py-3 px-6 rounded-full shadow-lg transition-transform hover:scale-105 text-lg"
-            target="_blank"
-            rel="noopener noreferrer"
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent z-10" />
+          <motion.div
+            animate={{
+              y: [0, -10, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+            }}
+            className="relative z-0"
           >
-            Download Resume
-          </a>
-        </div>
+            <img
+              src={coogif}
+              alt="Cool GIF"
+              className="w-full h-auto rounded-lg shadow-2xl shadow-blue-500/20 p-4"
+            />
+          </motion.div>
+
+          {/* Decorative elements */}
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 opacity-10 blur-2xl rounded-lg" />
+          <div className="absolute -inset-1 bg-gradient-to-t from-blue-500/20 via-transparent to-transparent blur-xl" />
+        </motion.div>
       </div>
 
       <div className="absolute bottom-8 text-white text-2xl animate-bounce">
@@ -147,7 +157,7 @@ const LeadSection = () => {
               behavior: 'smooth' 
             });
           }}
-          className="p-2"
+          className="p-8"
         >
           <ChevronDown size={32} />
         </button>
