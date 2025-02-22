@@ -30,14 +30,14 @@ function App() {
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <LeadSection />
       <About />
-      <Experience />      
-      <Projects 
+      <Experience />
+      <Projects
         visibleProjects={visibleProjects}
         loadMore={loadMoreProjects}
       />
       <GithubRepositories
-      visibleRepos={visibleProjects} 
-      loadMoreRepos={loadMoreRepos}/>
+        visibleRepos={visibleProjects}
+        loadMoreRepos={loadMoreRepos} />
       <Skills />
       <Contact />
       <Footer />
