@@ -4,7 +4,6 @@ import Header from './components/Header';
 import LeadSection from './sections/Lead';
 import About from './sections/About';
 import Experience from './sections/Experience';
-import Education from './sections/Education';
 import Projects from './sections/Projects';
 import GithubRepositories from './sections/GithubRepositories';
 import Skills from './sections/Skills';

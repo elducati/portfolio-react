@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { motion } from 'framer-motion';
-import coogif from '../assets/coogif.gif'; // Import the GIF
 
 const LeadSection = () => {
   const svgRef = useRef(null);
