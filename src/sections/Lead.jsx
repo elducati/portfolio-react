@@ -54,13 +54,13 @@ const LeadSection = () => {
   };
 
   return (
-    <section id="lead" className="relative  flex items-center justify-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center p-8">
-      <div className="flex flex-col items-center w-full">
-        <div className="hover:opacity-90 transition-opacity duration-300 w-full">
+    <section id="lead" className="relative flex items-center justify-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center p-8" style={{ height: '100vh' }}>
+      <div className="flex flex-col items-center w-full h-full">
+        <div className="hover:opacity-90 transition-opacity duration-300 w-full h-full">
           <svg
             ref={svgRef}
             viewBox="0 0 1200 300"
-            className="w-full"
+            className="w-full h-full"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
           >
@@ -113,41 +113,6 @@ const LeadSection = () => {
             </text>
           </svg>
         </div>
-
-        <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.2,
-            type: "spring",
-            stiffness: 100,
-          }}
-          className="relative w-full max-w-[500px] mx-auto mt-8 mb-8" // Added mb-8 for margin-bottom
-        >
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent z-10" />
-          <motion.div
-            animate={{
-              y: [0, -10, 0],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Number.POSITIVE_INFINITY,
-              ease: "easeInOut",
-            }}
-            className="relative z-0"
-          >
-            <img
-              src={coogif}
-              alt="Cool GIF"
-              className="w-full h-auto rounded-lg shadow-2xl shadow-blue-500/20 p-4"
-            />
-          </motion.div>
-
-          {/* Decorative elements */}
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 opacity-10 blur-2xl rounded-lg" />
-          <div className="absolute -inset-1 bg-gradient-to-t from-blue-500/20 via-transparent to-transparent blur-xl" />
-        </motion.div>
       </div>
 
       <div className="absolute bottom-8 text-white text-2xl animate-bounce">
