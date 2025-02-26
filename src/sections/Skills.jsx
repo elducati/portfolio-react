@@ -4,14 +4,14 @@ import skillsData from '../data/skills';
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-16 relative overflow-hidden">
+    <section id="skills" className="py-24 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-950"></div>
       <div className="absolute inset-0 opacity-20 bg-[url('/img/grid-pattern.svg')]"></div>
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header */}
-        <div className="mb-16 text-center">
+        <div className="mb-20 text-center">
           <h2 className="inline-block text-5xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
             Skills
           </h2>
@@ -38,7 +38,7 @@ const Skills = () => {
           {skillsData.map((skill, index) => (
             <motion.div
               key={index}
-              className="px-6 py-4 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/30 text-center text-white font-medium shadow-lg hover:shadow-blue-500/20 hover:border-blue-500/30 transition-all duration-300"
+              className="px-6 py-4 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/30 text-center text-white  shadow-lg hover:shadow-blue-500/20 hover:border-blue-500/30 transition-all duration-300"
               variants={{
                 hidden: { scale: 0, opacity: 0 },
                 visible: { 

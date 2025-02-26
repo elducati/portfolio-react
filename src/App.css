@@ -575,8 +575,6 @@ body {
   gap: var(--spacing-md);
 }
 
-.education-card {
-}
 
 .education-card h3 {
   margin: 0 0 var(--spacing-sm);

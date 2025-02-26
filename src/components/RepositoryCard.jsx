@@ -13,7 +13,7 @@ const RepositoryCard = ({ name, description, html_url }) => {
         {/* Decorative accent */}
         <div className="absolute top-0 right-0 h-16 w-16 bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-50 blur-xl rounded-full -translate-y-6 translate-x-2"></div>
         
-        <h3 className="text-2xl font-bold text-white mb-3 relative z-10">{name}</h3>
+        <h3 className="text-2xl text-white mb-3 relative z-10">{name}</h3>
         <p className="text-gray-400 mb-5 relative z-10">{description}</p>
         <a 
           href={html_url} 
