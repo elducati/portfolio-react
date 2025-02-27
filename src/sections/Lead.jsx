@@ -93,13 +93,13 @@ const LeadSection = () => {
                   y="50%"
                   dominantBaseline="middle"
                   textAnchor="middle"
-                  fontSize="100"
+                  fontSize="160"
                   fontWeight="bold"
                   fill="none"
                   stroke="white"
                   strokeWidth="1"
                 >
-                  GEOFFREY OMONDI
+                  GEOFFREY
                 </text>
               </mask>
             </defs>
@@ -107,7 +107,7 @@ const LeadSection = () => {
             <circle
               cx={mousePos.x}
               cy={mousePos.y}
-              r="100"
+              r="160"
               fill="url(#glow)"
               mask="url(#text-mask)"
               style={{
@@ -121,14 +121,14 @@ const LeadSection = () => {
               y="50%"
               dominantBaseline="middle"
               textAnchor="middle"
-              fontSize="100"
+              fontSize="160"
               fontWeight="bold"
               fill="url(#textGradient)"
               stroke="rgba(255,255,255,0.25)"
               strokeWidth="2"
               filter="url(#glow-filter)"
             >
-              GEOFFREY OMONDI
+              GEOFFREY
             </text>
           </svg>
         </div>
