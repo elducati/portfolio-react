@@ -40,7 +40,7 @@ The contact section provides a form for visitors to get in touch with me. The fo
 
 ## Live Demo
 
-You can view the live demo of the portfolio website [here](https://elducati-react-portfolio.vercel.app/).
+You can view the live demo of the portfolio website [here](https://jeff007.vercel.app/).
 
 ## License
 
