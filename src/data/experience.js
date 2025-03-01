@@ -8,7 +8,7 @@ const experiences = [
       "Creating and collaborating openly in public-facing projects.",
       "Documenting and sharing my personal and professional journey.",
       "Experimenting with innovative ideas using cutting-edge AI tools.",
-      "Contributing to the development of large language models (LLMs) and GPTs through AI training.",
+      "Contributing to the development of large language models (LLMs) and autonomous vehicle AI through AI training.",
     ]
   },
   {
