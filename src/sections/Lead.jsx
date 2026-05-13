@@ -1,66 +1,56 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState, useCallback } from 'react';
 import { ChevronDown } from 'lucide-react';
+
+const colors = [
+  'rgb(59, 130, 246)',
+  'rgb(99, 102, 241)',
+  'rgb(139, 92, 246)',
+  'rgb(236, 72, 153)',
+  'rgb(248, 113, 113)',
+  'rgb(16, 185, 129)',
+];
 
 const LeadSection = () => {
   const svgRef = useRef(null);
+  const rafRef = useRef(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [currentColor, setCurrentColor] = useState('rgb(255, 215, 0)');
 
-  useEffect(() => {
-    const updateDimensions = () => {
-      if (svgRef.current) {
-        const { width, height } = svgRef.current.getBoundingClientRect();
-      }
-    };
+  const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
 
-    updateDimensions();
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
+  const handleMouseMove = useCallback((e) => {
+    if (rafRef.current) return;
+    rafRef.current = requestAnimationFrame(() => {
+      rafRef.current = null;
+      if (svgRef.current) {
+        const ctm = svgRef.current.getScreenCTM();
+        if (ctm) {
+          const point = svgRef.current.createSVGPoint();
+          point.x = e.clientX;
+          point.y = e.clientY;
+          const svgPoint = point.matrixTransform(ctm.inverse());
+          setMousePos({ x: svgPoint.x, y: svgPoint.y });
+          setCurrentColor(getRandomColor());
+        }
+      }
+    });
   }, []);
 
-  const getRandomColor = () => {
-    const colors = [
-      'rgb(59, 130, 246)',   // Blue
-      'rgb(99, 102, 241)',   // Indigo
-      'rgb(139, 92, 246)',   // Purple
-      'rgb(236, 72, 153)',   // Pink
-      'rgb(248, 113, 113)',  // Red
-      'rgb(16, 185, 129)',   // Emerald
-    ];
-    return colors[Math.floor(Math.random() * colors.length)];
-  };
-
-  const handleMouseMove = (e) => {
-    if (svgRef.current) {
-      const ctm = svgRef.current.getScreenCTM();
-      if (ctm) {
-        const point = svgRef.current.createSVGPoint();
-        point.x = e.clientX;
-        point.y = e.clientY;
-        const svgPoint = point.matrixTransform(ctm.inverse());
-        setMousePos({
-          x: svgPoint.x,
-          y: svgPoint.y,
-        });
-        setCurrentColor(getRandomColor());
-      }
+  const handleMouseLeave = useCallback(() => {
+    if (rafRef.current) {
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = null;
     }
-  };
-
-  const handleMouseLeave = () => {
     setMousePos({ x: 0, y: 0 });
-  };
+  }, []);
 
   return (
     <section id="lead" className="relative flex items-center justify-center overflow-hidden text-white text-center" style={{ height: '100vh' }}>
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-950"></div>
-      <div className="absolute inset-0 opacity-20 bg-[url('/img/grid-pattern.svg')]"></div>
+      
 
-      {/* Animated background orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl opacity-10 animate-pulse"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '1s' }}></div>
-
+      
       <div className="flex flex-col items-center w-full h-full relative z-10">
         <div className="hover:opacity-90 transition-opacity duration-300 w-full h-full flex items-center justify-center">
           <svg
@@ -146,23 +136,6 @@ const LeadSection = () => {
         </div>
       </div>
 
-
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes scaleIn {
-          from { opacity: 0; transform: scale(0); }
-          to { opacity: 1; transform: scale(1); }
-        }
-        @keyframes float {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-15px); }
-          100% { transform: translateY(0px); }
-        }
-      `}</style>
     </section>
   );
 };

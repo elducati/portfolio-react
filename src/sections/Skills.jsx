@@ -7,7 +7,7 @@ const Skills = () => {
     <section id="skills" className="py-24 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-950"></div>
-      <div className="absolute inset-0 opacity-20 bg-[url('/img/grid-pattern.svg')]"></div>
+      
       
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header */}
@@ -54,10 +54,6 @@ const Skills = () => {
           ))}
         </motion.div>
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl opacity-10 translate-x-1/2 translate-y-1/2"></div>
-      <div className="absolute top-0 left-0 w-72 h-72 bg-purple-500 rounded-full filter blur-3xl opacity-10 -translate-x-1/2 -translate-y-1/2"></div>
     </section>
   );
 };

@@ -1,5 +1,4 @@
-// App.js
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import Header from './components/Header';
 import LeadSection from './sections/Lead';
 import About from './sections/About';
@@ -7,9 +6,10 @@ import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import GithubRepositories from './sections/GithubRepositories';
 import Skills from './sections/Skills';
-import Contact from './sections/Contact';
 import Footer from './components/Footer';
 import './App.css';
+
+const Contact = lazy(() => import('./sections/Contact'));
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -38,7 +38,9 @@ function App() {
         visibleRepos={visibleRepos}
         loadMoreRepos={loadMoreRepos} />
       <Skills />
-      <Contact />
+      <Suspense fallback={null}>
+        <Contact />
+      </Suspense>
       <Footer />
     </div>
   );

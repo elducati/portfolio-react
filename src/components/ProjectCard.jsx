@@ -1,17 +1,24 @@
-// components/ProjectCard.jsx
 import { motion } from 'framer-motion';
 
-const ProjectCard = ({ title, description, link }) => (
+const ProjectCard = ({ title, description, link, image }) => (
   <motion.div 
-    className="p-6 bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 shadow-xl hover:shadow-blue-500/20 transition-all duration-300"
+    className="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 shadow-xl hover:shadow-blue-500/20 transition-all duration-300 overflow-hidden"
     whileHover={{ scale: 1.02 }}
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
   >
-    <div className="relative project-content">
-      {/* Decorative accent */}
+    {image && (
+      <div className="relative h-48 overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          loading="lazy"
+          className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+        />
+      </div>
+    )}
+    <div className="p-6 relative">
       <div className="absolute top-0 right-0 h-16 w-16 bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-50 blur-xl rounded-full -translate-y-6 translate-x-2"></div>
-      
       <h3 className="text-2xl text-white mb-3 relative z-10">{title}</h3>
       <p className="text-gray-400 mb-5 relative z-10">{description}</p>
       <a 

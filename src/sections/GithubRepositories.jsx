@@ -1,28 +1,43 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import RepositoryCard from '../components/RepositoryCard';
+
+const CACHE_KEY = 'gh_repos_elducati';
+const CACHE_TTL = 3600000;
 
 const GithubRepositories = ({ visibleRepos, loadMoreRepos }) => {
   const [repositories, setRepositories] = useState([]);
 
   useEffect(() => {
-    const fetchRepositories = async () => {
+    const cached = localStorage.getItem(CACHE_KEY);
+    if (cached) {
       try {
-        const response = await axios.get('https://api.github.com/users/elducati/repos');
-        setRepositories(response.data);
-      } catch (error) {
-        console.error('Error fetching repositories:', error);
-      }
-    };
+        const { data, timestamp } = JSON.parse(cached);
+        if (Date.now() - timestamp < CACHE_TTL) {
+          setRepositories(data);
+          return;
+        }
+      } catch {}
+    }
 
-    fetchRepositories();
+    const controller = new AbortController();
+    fetch('https://api.github.com/users/elducati/repos', { signal: controller.signal })
+      .then(res => res.json())
+      .then(data => {
+        setRepositories(data);
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ data, timestamp: Date.now() }));
+      })
+      .catch(err => {
+        if (err.name !== 'AbortError') console.error('Error fetching repositories:', err);
+      });
+
+    return () => controller.abort();
   }, []);
 
   return (
     <section id="github-repositories" className="py-24 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-950"></div>
-      <div className="absolute inset-0 opacity-20 bg-[url('/img/grid-pattern.svg')]"></div>
+      
       
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header */}
@@ -55,10 +70,6 @@ const GithubRepositories = ({ visibleRepos, loadMoreRepos }) => {
           )}
         </div>
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl opacity-10 translate-x-1/2 translate-y-1/2"></div>
-      <div className="absolute top-0 left-0 w-72 h-72 bg-purple-500 rounded-full filter blur-3xl opacity-10 -translate-x-1/2 -translate-y-1/2"></div>
     </section>
   );
 };

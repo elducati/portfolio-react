@@ -1,22 +1,13 @@
 // src/sections/About.jsx
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import aboutData from '../data/about';
-import coogif from '../assets/coogif.gif';
+
 
 const About = () => {
-  const [backgroundPosition, setBackgroundPosition] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e) => {
-    const { clientX, clientY } = e;
-    setBackgroundPosition({ x: clientX / 10, y: clientY / 10 });
-  };
-
   return (
     <section 
       id="about" 
       className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 backdrop-blur-md border border-white/20"
-      onMouseMove={handleMouseMove}
     >
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-400">
@@ -89,7 +80,7 @@ const About = () => {
               className="relative z-0 h-full"
             >
               <img
-                src={coogif}
+                src="/assets/coogif.gif"
                 alt="Cool GIF"
                 className="w-full h-full object-cover rounded-lg shadow-2xl shadow-blue-500/20 p-4"
               />

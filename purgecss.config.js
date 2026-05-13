@@ -1,9 +1,5 @@
-import { purgeCSSPlugin } from '@fullhuman/postcss-purgecss';
-
 module.exports = {
-  plugins: [
-    purgecss({
-      content: ['./**/*.html']
-    })
-  ]
-}
+  content: ['./build/**/*.html', './build/static/js/*.js'],
+  css: ['./build/static/css/*.css'],
+  output: './build/static/css',
+};
