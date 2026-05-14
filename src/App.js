@@ -16,6 +16,59 @@ const typewriterStrings = [
   'scalable APIs.',
 ];
 
+const GH = 'https://github.com/elducati';
+
+const projectsData = [
+  {
+    title: 'Premium E-Commerce Platform',
+    desc: 'High-performance headless Shopify store with custom React frontend, real-time inventory, and 99.9% uptime.',
+    chips: ['React', 'Shopify', 'Node.js'],
+    glow: 'violet',
+    featured: true,
+    link: `${GH}/next-wp`,
+  },
+  {
+    title: 'NFT Marketplace',
+    desc: 'Full-featured NFT marketplace with smart contract minting and wallet integration.',
+    chips: ['Web3', 'Solidity'],
+    glow: 'cyan',
+    featured: false,
+    link: `${GH}/six-path-nft`,
+  },
+  {
+    title: 'Enterprise WooCommerce Store',
+    desc: 'Scalable multi-vendor marketplace handling 50k+ monthly transactions.',
+    chips: ['WordPress', 'WooCommerce'],
+    glow: 'violet',
+    featured: false,
+    link: `${GH}/watch-it-outside-react`,
+  },
+  {
+    title: 'SaaS Dashboard',
+    desc: 'Real-time analytics dashboard with data visualization and role-based access.',
+    chips: ['Next.js', 'TypeScript'],
+    glow: 'cyan',
+    featured: false,
+    link: `${GH}/public-square-app`,
+  },
+  {
+    title: 'Mobile Commerce App',
+    desc: 'Cross-platform shopping app with push notifications and Apple Pay.',
+    chips: ['React Native'],
+    glow: 'violet',
+    featured: false,
+    link: `${GH}/random-winner-game`,
+  },
+  {
+    title: 'Headless CMS API',
+    desc: 'Serverless content API powering 10+ client websites with sub-100ms response times.',
+    chips: ['Node.js', 'AWS'],
+    glow: 'cyan',
+    featured: false,
+    link: `${GH}/ceramic-project`,
+  },
+];
+
 const skills = [
   { icon: '⚛️', name: 'React', pct: 95 },
   { icon: '▲', name: 'Next.js', pct: 90 },
@@ -36,6 +89,11 @@ const testimonialsData = [
 ];
 
 const chipItems = ['React', 'Next.js', 'TypeScript', 'Node.js', 'Shopify', 'WordPress', 'WooCommerce', 'Web3/Solidity', 'PostgreSQL', 'TailwindCSS', 'AWS', 'Figma'];
+const socialLinks = [
+  { label: '🐙 GitHub', url: GH },
+  { label: '💼 LinkedIn', url: 'https://www.linkedin.com/in/geoffrey-omondi-243ab6256/' },
+  { label: '✉️ Email', url: 'mailto:geomondi09@gmail.com' },
+];
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -64,25 +122,21 @@ export default function App() {
 
   return (
     <>
-      {/* Ambient Background */}
       <div className="ambient-grid" />
       <div className="ambient-orb orb-violet" />
       <div className="ambient-orb orb-cyan" />
       <div className="ambient-orb orb-amber" />
 
-      {/* Custom Cursor */}
       <div className="custom-cursor">
         <div className="cursor-dot" ref={dotRef} />
         <div className="cursor-ring" ref={ringRef} />
       </div>
 
-      {/* Loading Screen */}
       <div className={`loading-screen${loading ? '' : ' hidden'}`}>
         <div className="loading-name">Geoffrey.</div>
         <div className="loading-bar-wrap"><div className="loading-bar-fill" /></div>
       </div>
 
-      {/* Navbar */}
       <nav className="navbar" id="navbar">
         <a href="#hero" className="nav-logo" onClick={(e) => { e.preventDefault(); document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' }); }}>GO.</a>
         <ul className="nav-links">
@@ -97,14 +151,12 @@ export default function App() {
         </button>
       </nav>
 
-      {/* Mobile Overlay */}
       <div className={`mobile-overlay${menuOpen ? ' open' : ''}`}>
         {['About', 'Work', 'Skills', 'Testimonials', 'Contact'].map((label) => (
           <a key={label} href={`#${label.toLowerCase()}`} className="mobile-link" onClick={(e) => { e.preventDefault(); navTo(label.toLowerCase()); }}>{label}</a>
         ))}
       </div>
 
-      {/* Hero */}
       <section className="hero" id="hero">
         <div className="hero-orb h1" />
         <div className="hero-orb h2" />
@@ -136,7 +188,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* About */}
       <section className="section" id="about">
         <span className="section-tag reveal">About</span>
         <h2 className="reveal reveal-delay-1">Developer. / Architect. / Maker.</h2>
@@ -153,75 +204,33 @@ export default function App() {
             </div>
             <div className="about-btns">
               <a href="#contact" className="btn-primary" onClick={(e) => { e.preventDefault(); navTo('contact'); }}>Get in touch</a>
-              <button className="btn-outline" onClick={() => alert('CV download placeholder')}>Download CV ↓</button>
+              <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline">Download CV ↓</a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Projects */}
       <section className="section" id="work">
         <span className="section-tag reveal">Work</span>
         <h2 className="reveal reveal-delay-1">Selected projects.</h2>
         <div className="bento-grid">
-          <div className="bento-card featured reveal reveal-delay-2">
-            <div className="bento-glow violet" /><span className="bento-featured-badge">Featured</span>
-            <div className="bento-chips"><span className="bento-chip">React</span><span className="bento-chip">Shopify</span><span className="bento-chip">Node.js</span></div>
-            <div className="bento-card-content">
-              <h3>Premium E-Commerce Platform</h3>
-              <p>High-performance headless Shopify store with custom React frontend, real-time inventory, and 99.9% uptime.</p>
-              <a href="#" className="bento-link">View project →</a>
+          {projectsData.map((p, i) => (
+            <div key={p.title} className={`bento-card${p.featured ? ' featured' : ''} reveal reveal-delay-${Math.min(i + 2, 4)}`}>
+              <div className={`bento-glow ${p.glow}`} />
+              {p.featured && <span className="bento-featured-badge">Featured</span>}
+              <div className="bento-chips">
+                {p.chips.map((c) => <span key={c} className="bento-chip">{c}</span>)}
+              </div>
+              <div className="bento-card-content">
+                <h3>{p.title}</h3>
+                <p>{p.desc}</p>
+                <a href={p.link} target="_blank" rel="noopener noreferrer" className="bento-link">View project →</a>
+              </div>
             </div>
-          </div>
-          <div className="bento-card reveal reveal-delay-2">
-            <div className="bento-glow cyan" />
-            <div className="bento-chips"><span className="bento-chip">Web3</span><span className="bento-chip">Solidity</span></div>
-            <div className="bento-card-content">
-              <h3>NFT Marketplace</h3>
-              <p>Full-featured NFT marketplace with smart contract minting and wallet integration.</p>
-              <a href="#" className="bento-link">View project →</a>
-            </div>
-          </div>
-          <div className="bento-card reveal reveal-delay-3">
-            <div className="bento-glow violet" />
-            <div className="bento-chips"><span className="bento-chip">WordPress</span><span className="bento-chip">WooCommerce</span></div>
-            <div className="bento-card-content">
-              <h3>Enterprise WooCommerce Store</h3>
-              <p>Scalable multi-vendor marketplace handling 50k+ monthly transactions.</p>
-              <a href="#" className="bento-link">View project →</a>
-            </div>
-          </div>
-          <div className="bento-card reveal reveal-delay-3">
-            <div className="bento-glow cyan" />
-            <div className="bento-chips"><span className="bento-chip">Next.js</span><span className="bento-chip">TypeScript</span></div>
-            <div className="bento-card-content">
-              <h3>SaaS Dashboard</h3>
-              <p>Real-time analytics dashboard with data visualization and role-based access.</p>
-              <a href="#" className="bento-link">View project →</a>
-            </div>
-          </div>
-          <div className="bento-card reveal reveal-delay-4">
-            <div className="bento-glow violet" />
-            <div className="bento-chips"><span className="bento-chip">React Native</span></div>
-            <div className="bento-card-content">
-              <h3>Mobile Commerce App</h3>
-              <p>Cross-platform shopping app with push notifications and Apple Pay.</p>
-              <a href="#" className="bento-link">View project →</a>
-            </div>
-          </div>
-          <div className="bento-card reveal reveal-delay-4">
-            <div className="bento-glow cyan" />
-            <div className="bento-chips"><span className="bento-chip">Node.js</span><span className="bento-chip">AWS</span></div>
-            <div className="bento-card-content">
-              <h3>Headless CMS API</h3>
-              <p>Serverless content API powering 10+ client websites with sub-100ms response times.</p>
-              <a href="#" className="bento-link">View project →</a>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* Skills */}
       <section className="section" id="skills">
         <span className="section-tag reveal">Expertise</span>
         <h2 className="reveal reveal-delay-1">What I work with.</h2>
@@ -236,7 +245,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Testimonials */}
       <section className="section" id="testimonials">
         <span className="section-tag reveal">Testimonials</span>
         <h2 className="reveal reveal-delay-1">Kind words.</h2>
@@ -256,33 +264,31 @@ export default function App() {
         </div>
       </section>
 
-      {/* Contact */}
       <section className="contact-section" id="contact">
         <div className="contact-glow" />
         <span className="section-tag reveal">Contact</span>
         <h2 className="reveal reveal-delay-1">Let's build something <span className="gradient">→</span></h2>
         <p className="contact-sub reveal reveal-delay-2">Open to freelance projects, full-time roles, and interesting collaborations.</p>
-        <form className="contact-form reveal reveal-delay-3" onSubmit={(e) => { e.preventDefault(); alert('Message sent! (Demo)'); }}>
+        <form className="contact-form reveal reveal-delay-3" onSubmit={(e) => { e.preventDefault(); const f = e.target; window.location.href = `mailto:geomondi09@gmail.com?subject=${encodeURIComponent(f.subject.value || 'Portfolio Inquiry')}&body=${encodeURIComponent(`Name: ${f.name.value}\nEmail: ${f.email.value}\n\n${f.message.value}`)}`; }}>
           <div className="form-row">
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
           </div>
-          <input type="text" placeholder="Subject" />
-          <textarea placeholder="Your Message" required />
+          <input type="text" name="subject" placeholder="Subject" />
+          <textarea name="message" placeholder="Your Message" required />
           <button type="submit" className="btn-primary">Send Message</button>
         </form>
         <div className="social-row reveal reveal-delay-4">
-          {['🐙 GitHub', '💼 LinkedIn', '𝕏 Twitter/X', '✉️ Email'].map((s) => (
-            <a key={s} href="#" className="social-btn">{s}</a>
+          {socialLinks.map((s) => (
+            <a key={s.label} href={s.url} target="_blank" rel="noopener noreferrer" className="social-btn">{s.label}</a>
           ))}
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="footer">
         <div className="footer-logo">GO.</div>
         <div className="footer-copy">© 2026 Geoffrey Omondi. Built with care.</div>
-        <a href="#hero" className="back-to-top" onClick={(e) => { e.preventDefault(); document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' }); }}>↑ Back to top</a>
+        <a href={GH} target="_blank" rel="noopener noreferrer" className="back-to-top">↑ Back to top</a>
       </footer>
     </>
   );
