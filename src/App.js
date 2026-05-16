@@ -20,49 +20,49 @@ const GH = 'https://github.com/elducati';
 
 const projectsData = [
   {
-    title: 'Premium E-Commerce Platform',
-    desc: 'High-performance headless Shopify store with custom React frontend, real-time inventory, and 99.9% uptime.',
-    chips: ['React', 'Shopify', 'Node.js'],
+    title: 'Next.js + WordPress Headless CMS',
+    desc: 'Next.js starter template fetching data from WordPress via REST API with full type safety, cache revalidation, and dynamic OG images.',
+    chips: ['Next.js', 'TypeScript', 'WordPress'],
     glow: 'violet',
     featured: true,
     link: `${GH}/next-wp`,
   },
   {
-    title: 'NFT Marketplace',
-    desc: 'Full-featured NFT marketplace with smart contract minting and wallet integration.',
-    chips: ['Web3', 'Solidity'],
+    title: 'SixPath SVG NFT Collection',
+    desc: 'On-chain SVG NFT contract that composes colored symbols with a spinning wheel, built on Scaffold-ETH.',
+    chips: ['Solidity', 'Web3'],
     glow: 'cyan',
     featured: false,
     link: `${GH}/six-path-nft`,
   },
   {
-    title: 'Enterprise WooCommerce Store',
-    desc: 'Scalable multi-vendor marketplace handling 50k+ monthly transactions.',
-    chips: ['WordPress', 'WooCommerce'],
+    title: 'Watch It Outside Events',
+    desc: 'Web app for managing outdoor film festivals and events with carousels, animations, and responsive design.',
+    chips: ['React', 'Bootstrap'],
     glow: 'violet',
     featured: false,
     link: `${GH}/watch-it-outside-react`,
   },
   {
-    title: 'SaaS Dashboard',
-    desc: 'Real-time analytics dashboard with data visualization and role-based access.',
-    chips: ['Next.js', 'TypeScript'],
+    title: 'Arweave Public Square dApp',
+    desc: 'Decentralized app using the Public Square Protocol on Arweave for permanent, censorship-resistant content.',
+    chips: ['React', 'Arweave'],
     glow: 'cyan',
     featured: false,
     link: `${GH}/public-square-app`,
   },
   {
-    title: 'Mobile Commerce App',
-    desc: 'Cross-platform shopping app with push notifications and Apple Pay.',
-    chips: ['React Native'],
+    title: 'Blockchain Lottery Game',
+    desc: 'Decentralized lottery using Chainlink VRF for verifiable random winner selection, indexed with The Graph.',
+    chips: ['Solidity', 'Chainlink'],
     glow: 'violet',
     featured: false,
     link: `${GH}/random-winner-game`,
   },
   {
-    title: 'Headless CMS API',
-    desc: 'Serverless content API powering 10+ client websites with sub-100ms response times.',
-    chips: ['Node.js', 'AWS'],
+    title: 'Ceramic Decentralized Profile',
+    desc: 'Next.js app using Self.ID to write and retrieve user profile data on the Ceramic decentralized data network.',
+    chips: ['Next.js', 'Ceramic'],
     glow: 'cyan',
     featured: false,
     link: `${GH}/ceramic-project`,
@@ -88,7 +88,7 @@ const testimonialsData = [
   { initials: 'AW', name: 'Amina W.', role: 'Founder, ArtHouse', quote: 'Geoffrey delivered our Web3 marketplace ahead of schedule. The code quality and documentation were outstanding.' },
 ];
 
-const chipItems = ['React', 'Next.js', 'TypeScript', 'Node.js', 'Shopify', 'WordPress', 'WooCommerce', 'Web3/Solidity', 'PostgreSQL', 'TailwindCSS', 'AWS', 'Figma'];
+const chipItems = ['React', 'Next.js', 'TypeScript', 'WordPress', 'Solidity', 'Web3', 'Bootstrap', 'Arweave', 'Chainlink', 'Ceramic'];
 const socialLinks = [
   { label: '🐙 GitHub', url: GH },
   { label: '💼 LinkedIn', url: 'https://www.linkedin.com/in/geoffrey-omondi-243ab6256/' },
