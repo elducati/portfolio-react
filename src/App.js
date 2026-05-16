@@ -91,16 +91,16 @@ const skills = [
 ];
 
 const testimonialsData = [
-  { initials: 'SK', name: 'Sarah K.', role: 'Head of E-Commerce, RetailCo', quote: 'Geoffrey transformed our entire e-commerce infrastructure. Revenue grew 40% in the first quarter after launch.' },
+  { initials: 'SK', name: 'Sarah K.', role: 'Head of E-Commerce, RetailCo', quote: 'El Ducati transformed our entire e-commerce infrastructure. Revenue grew 40% in the first quarter after launch.' },
   { initials: 'JM', name: 'James M.', role: 'CTO, FinStart', quote: 'One of the most versatile developers I\'ve worked with. He moves from frontend to backend to smart contracts effortlessly.' },
-  { initials: 'AW', name: 'Amina W.', role: 'Founder, ArtHouse', quote: 'Geoffrey delivered our Web3 marketplace ahead of schedule. The code quality and documentation were outstanding.' },
+  { initials: 'AW', name: 'Amina W.', role: 'Founder, ArtHouse', quote: 'El Ducati delivered our Web3 marketplace ahead of schedule. The code quality and documentation were outstanding.' },
 ];
 
 const chipItems = ['React', 'Next.js', 'TypeScript', 'WordPress', 'Solidity', 'Web3', 'Bootstrap', 'Arweave', 'Chainlink', 'Ceramic'];
 const socialLinks = [
   { label: '🐙 GitHub', url: GH },
   { label: '💼 LinkedIn', url: 'https://www.linkedin.com/in/geoffrey-omondi-243ab6256/' },
-  { label: '✉️ Email', url: 'mailto:geomondi09@gmail.com' },
+  { label: '✉️ Email', url: 'mailto:elducati@proton.me' },
 ];
 
 export default function App() {
@@ -141,7 +141,7 @@ export default function App() {
       </div>
 
       <div className={`loading-screen${loading ? '' : ' hidden'}`}>
-        <div className="loading-name">Geoffrey.</div>
+        <div className="loading-name">El Ducati.</div>
         <div className="loading-bar-wrap"><div className="loading-bar-fill" /></div>
       </div>
 
@@ -171,8 +171,8 @@ export default function App() {
         <div className="hero-orb h3" />
         <div className="hero-badge">Full-Stack Developer · Nairobi, Kenya</div>
         <h1>
-          <div className="line1">Geoffrey /</div>
-          <div className="line2">Omondi</div>
+          <div className="line1">El Ducati</div>
+          <div className="line2">Developer</div>
         </h1>
         <div className="typewriter-wrap">
           <span ref={typewriterRef} /><span className="typewriter-cursor" />
@@ -205,7 +205,7 @@ export default function App() {
             <div className="about-badge"><span className="bolt">⚡</span> 8+ Years building</div>
           </div>
           <div className="about-content reveal reveal-delay-3">
-            <p>I'm Geoffrey — a full-stack developer and e-commerce solutions architect based in Nairobi. Over the past 8+ years, I've helped startups, agencies, and enterprises turn complex problems into polished digital products that drive real results.</p>
+            <p>I'm a full-stack developer and e-commerce solutions architect based in Nairobi. Over the past 8+ years, I've helped startups, agencies, and enterprises turn complex problems into polished digital products that drive real results.</p>
             <p>From architecting scalable Shopify+ and WooCommerce stores to building Web3 dApps and React-powered SaaS platforms, I bridge the gap between design vision and technical execution. I believe great code is invisible — what matters is how it moves the business forward.</p>
             <div className="skill-chips">
               {chipItems.map((chip) => <span key={chip} className="skill-chip">{chip}</span>)}
@@ -277,7 +277,7 @@ export default function App() {
         <span className="section-tag reveal">Contact</span>
         <h2 className="reveal reveal-delay-1">Let's build something <span className="gradient">→</span></h2>
         <p className="contact-sub reveal reveal-delay-2">Open to freelance projects, full-time roles, and interesting collaborations.</p>
-        <form className="contact-form reveal reveal-delay-3" onSubmit={(e) => { e.preventDefault(); const f = e.target; window.location.href = `mailto:geomondi09@gmail.com?subject=${encodeURIComponent(f.subject.value || 'Portfolio Inquiry')}&body=${encodeURIComponent(`Name: ${f.name.value}\nEmail: ${f.email.value}\n\n${f.message.value}`)}`; }}>
+        <form className="contact-form reveal reveal-delay-3" onSubmit={(e) => { e.preventDefault(); const f = e.target; window.location.href = `mailto:elducati@proton.me?subject=${encodeURIComponent(f.subject.value || 'Portfolio Inquiry')}&body=${encodeURIComponent(`Name: ${f.name.value}\nEmail: ${f.email.value}\n\n${f.message.value}`)}`; }}>
           <div className="form-row">
             <input type="text" name="name" placeholder="Your Name" required />
             <input type="email" name="email" placeholder="Your Email" required />
@@ -295,7 +295,7 @@ export default function App() {
 
       <footer className="footer">
         <div className="footer-logo">GO.</div>
-        <div className="footer-copy">© 2026 Geoffrey Omondi. Built with care.</div>
+        <div className="footer-copy">© 2026 El Ducati. Built with care.</div>
         <a href={GH} target="_blank" rel="noopener noreferrer" className="back-to-top">↑ Back to top</a>
       </footer>
     </>
