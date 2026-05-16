@@ -146,7 +146,7 @@ export default function App() {
       </div>
 
       <nav className="navbar" id="navbar">
-        <a href="#hero" className="nav-logo" onClick={(e) => { e.preventDefault(); document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' }); }}>GO.</a>
+        <a href="#hero" className="nav-logo" onClick={(e) => { e.preventDefault(); document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' }); }}>EL</a>
         <ul className="nav-links">
           <li><a href="#about" onClick={(e) => { e.preventDefault(); navTo('about'); }}>About</a></li>
           <li><a href="#work" onClick={(e) => { e.preventDefault(); navTo('work'); }}>Work</a></li>
@@ -201,7 +201,7 @@ export default function App() {
         <h2 className="reveal reveal-delay-1">Developer. / Architect. / Maker.</h2>
         <div className="about-grid">
           <div className="about-visual reveal reveal-delay-2">
-            <div className="about-watermark">GO</div>
+            <div className="about-watermark">EL</div>
             <div className="about-badge"><span className="bolt">⚡</span> 8+ Years building</div>
           </div>
           <div className="about-content reveal reveal-delay-3">
@@ -294,7 +294,7 @@ export default function App() {
       </section>
 
       <footer className="footer">
-        <div className="footer-logo">GO.</div>
+        <div className="footer-logo">EL</div>
         <div className="footer-copy">© 2026 El Ducati. Built with care.</div>
         <a href={GH} target="_blank" rel="noopener noreferrer" className="back-to-top">↑ Back to top</a>
       </footer>
