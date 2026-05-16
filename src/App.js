@@ -212,7 +212,7 @@ export default function App() {
             </div>
             <div className="about-btns">
               <a href="#contact" className="btn-primary" onClick={(e) => { e.preventDefault(); navTo('contact'); }}>Get in touch</a>
-              <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline">Download CV ↓</a>
+              <a href="/Resume316.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline">Download CV ↓</a>
             </div>
           </div>
         </div>
