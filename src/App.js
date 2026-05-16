@@ -20,11 +20,19 @@ const GH = 'https://github.com/elducati';
 
 const projectsData = [
   {
+    title: 'CityHub Civil Engagement Platform',
+    desc: 'Full-stack civic platform enabling citizens to submit proposals, vote on community issues, and connect with local government. Features RBAC, Redis-backed voting, RabbitMQ async processing, admin dashboard with analytics, and CI/CD pipeline.',
+    chips: ['Next.js', 'TypeScript', 'PostgreSQL', 'Redis'],
+    glow: 'cyan',
+    featured: true,
+    link: `${GH}/cityhub-civil-engagement`,
+  },
+  {
     title: 'Next.js + WordPress Headless CMS',
     desc: 'Next.js starter template fetching data from WordPress via REST API with full type safety, cache revalidation, and dynamic OG images.',
     chips: ['Next.js', 'TypeScript', 'WordPress'],
     glow: 'violet',
-    featured: true,
+    featured: false,
     link: `${GH}/next-wp`,
   },
   {
